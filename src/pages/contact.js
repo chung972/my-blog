@@ -1,8 +1,9 @@
 import React from "react";
+import Layout from "../components/layout";
 
 const ContactPage = () => {
-    return(
-        <div>
+    return (
+        <Layout>
             <h1>Contact</h1>
             <ul>
                 <li>
@@ -15,7 +16,8 @@ const ContactPage = () => {
                     <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
                 </li>
             </ul>
-        </div>
+        </Layout>
+
     )
 }
 
