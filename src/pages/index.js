@@ -1,11 +1,17 @@
-import React from "react"
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../components/layout";
 
 const IndexPage = () => {
-    return(
-        <div>
+    return (
+        <Layout>
             <h1>Hello</h1>
             <h2>My name is Albert. A full-stack developer living in Texas.</h2>
-        </div>
+            {/* <p>Need a developer? <a href="/contact">Contact me.</a></p> */}
+            {/* if you're linking to an EXTERNAL site, you can use an <a> just fine,
+            but for all LOCAL pages, we can take advantage of React's Link component */}
+            <p>Need a developer? <Link to="/contact">Contact me.</Link></p>
+        </Layout>
     )
 }
 
