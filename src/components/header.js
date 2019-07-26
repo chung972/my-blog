@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import headerStyles from "./header.module.scss"
 // NOTE: just because you're IMPORTing a style sheet in a PARTICULAR component, 
 // that DOES NOT mean that those styles are SCOPED to that component
@@ -12,11 +12,24 @@ import headerStyles from "./header.module.scss"
 // LOCALLY SCOPED, which means that we'll have to MANUALLY import and use them
 
 const Header = () => {
+
+    // the notation below (graphql``) is called a TAGGED TEMPLATE LITERAL;
+    // read more here: https://wesbos.com/tagged-template-literals/
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+        }
+    `)
+
     return (
         <header className={headerStyles.header}>
             <h1>
                 <Link className={headerStyles.title} to="/">
-                    Albert Chung
+                    {data.site.siteMetadata.title}
                 </Link>
             </h1>
             <nav>
